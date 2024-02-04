@@ -14,6 +14,65 @@ body {
     text-shadow: 0 0 10px #000;
 }
 
+.imagen-mueve {
+    position: absolute;
+    z-index: 5;
+    background-image: url(img/backg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    filter: grayscale(0.6);
+    align-items: center;
+    justify-content: center;
+    transform: scale(1, 1)
+}
+
+.imagen-mueve img {
+    cursor: pointer;
+    margin: 20px;
+    box-shadow: 0 0 20px #000;
+    transform: translate(0, -4rem);
+}
+
+.imagen-mueve-1 {
+    animation-name: animacion-girar;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animacion-girar {
+      0% {
+        width: 100vw;
+        height: 100vh;
+      }
+       
+
+      25% {
+        width: 100vw;
+        height: 100vh;
+        transform: scale(1.2, 1.2);
+      }
+
+      50% {
+        width: 50vw;
+        height: 100vh; 
+      }
+
+      75% {
+        visibility: hidden;
+        z-index: 0;
+      }
+
+      100% {
+        width: 0;
+        /* height: 0; */
+        visibility: hidden;
+        display: none;
+      }
+    }
+
 .imagen-lado{
     top: 0;
     position: sticky;
@@ -30,7 +89,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    height: 100%;
+    width: 50vw;
+    height: 100vh;
     flex-direction: column;
     filter: grayscale(0.6);
     /* filter: blur(5px); */
@@ -39,6 +99,7 @@ body {
 }
 
 .imagen-al-lado img {
+    cursor: pointer;
     margin: 20px;
     margin-top: 80px;
     box-shadow: 0 0 20px #000;
@@ -48,6 +109,14 @@ body {
 .imagen-al-lado img:hover {
     transform: scale(1.05);
 }
+
+/* .imagen-al-lado img:focus {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
 
 .fecha {
     margin-top: 0.5rem;
@@ -105,7 +174,7 @@ body {
 .boton-pay button:hover {
     opacity: 80%;
     cursor: pointer;
-    transform: scale(1.01);
+    transform: scale(1.02);
     box-shadow: 0 0 0.25rem rgb(39, 39, 39);
 }
 
@@ -217,7 +286,7 @@ body {
 }
 
 .agree span {
-    color: #646464;
+    color: #969494;
     text-shadow: none;
     line-height: 2;
 }
