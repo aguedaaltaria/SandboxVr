@@ -10,14 +10,14 @@ body {
 
 .imagen-lado h1, h2, h3, h4, h5, h6, span {
     background: none;
-    color: #bbb;
+    color: #ddd;
     text-shadow: 0 0 10px #000;
 }
 
 .imagen-mueve {
     position: absolute;
     z-index: 5;
-    background-image: url(img/backg.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/backg.png);  
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -47,7 +47,6 @@ body {
         width: 100vw;
         height: 100vh;
       }
-       
 
       25% {
         width: 100vw;
@@ -57,7 +56,8 @@ body {
 
       50% {
         width: 50vw;
-        height: 100vh; 
+        height: 100vh;
+        transform: scale(1, 1); 
       }
 
       75% {
@@ -73,6 +73,33 @@ body {
       }
     }
 
+.mover-arriba {
+    display: flex;
+    justify-content: center;
+    background: none;
+    align-items: center;
+    opacity: 0;
+    flex-direction: column;
+        animation-name: animacion-2;
+        animation-duration: 5s;
+        animation-fill-mode: forwards;
+        animation-delay: 2s;
+    }
+    
+    @keyframes animacion-2 {
+          0% {
+            opacity: 0;
+          }
+
+          25% {
+            opacity: 0;
+          }
+
+          100% {
+            opacity: 1;
+          }
+        }
+
 .imagen-lado{
     top: 0;
     position: sticky;
@@ -80,12 +107,13 @@ body {
     height: 100vh;
 }
 
-.imagen-al-lado span {
+.mover-arriba span {
     font-size: x-small ;
 }
 
 .imagen-al-lado {
-    background-image: url(img/backg.png);
+    /* background-image: url(img/backg.png); */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/backg.png); 
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
